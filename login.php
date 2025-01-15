@@ -44,7 +44,7 @@ if (isset($_POST["submit"])) {
             </form>
         </div>
         <?php if (isset($error)) : ?>
-        <p style="color: red;">Username atau Password salah</p>
+        <p style="color: red; margin-top: 20px;">Username atau Password salah</p>
         <?php endif?>
     </div>
 
