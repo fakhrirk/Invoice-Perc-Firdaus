@@ -466,3 +466,8 @@ function downloadInvoice() {
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
+
+if (/[<>"'`]/g.test(userId) || /[<>"'`]/g.test(password)) {
+  alert("Karakter khusus tidak diizinkan");
+  return false;
+}

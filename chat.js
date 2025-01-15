@@ -750,3 +750,8 @@ document.getElementById("userInput").addEventListener("keypress", function (e) {
     sendMessage();
   }
 });
+
+if (/[<>"'`]/g.test(userId) || /[<>"'`]/g.test(password)) {
+  alert("Karakter khusus tidak diizinkan");
+  return false;
+}

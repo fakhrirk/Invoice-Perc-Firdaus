@@ -32,7 +32,7 @@ if (isset($_POST["submit"])) {
             <h2>Log in (Firdaus)</h2>
             <form action="login.php" method="POST">
                 <div class="input-group">
-                    <input type="text" name="username" placeholder="User ID" required>
+                    <input type="text" name="username" placeholder="User Name" required>
                     <span class="icon">👤</span>
                 </div>
                 <div class="input-group">
