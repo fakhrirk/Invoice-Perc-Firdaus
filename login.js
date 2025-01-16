@@ -21,8 +21,27 @@ function validateForm(event) {
   return false;
 }
 
-if (!sessionStorage.getItem("isLoggedIn")) {
-  window.location.href = "login.html";
+window.onload = function () {
+  if (!sessionStorage.getItem("isLoggedIn")) {
+    // If not logged in, stay on login page
+    if (window.location.pathname !== "/login.html") {
+      window.location.href = "login.html";
+    }
+  } else {
+    // If logged in, redirect to index
+    if (window.location.pathname === "/login.html") {
+      window.location.href = "index.html";
+    }
+  }
+};
+
+function validateForm(event) {
+  event.preventDefault();
+  // Your login validation logic here
+
+  // If login successful
+  sessionStorage.setItem("isLoggedIn", "true");
+  window.location.href = "index.html";
 }
 
 // dengan kodingan ini user tidak dapat mengklik tombol kiri pada mouse
