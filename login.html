@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css" />
     <title>Login Invoice</title>
+    <script>
+      if (sessionStorage.getItem("isLoggedIn")) {
+        window.location.href = "index.html";
+      }
+    </script>
   </head>
   <body>
     <div class="login-container">
@@ -26,6 +31,12 @@
       </div>
     </div>
 
+    <script>
+      // Check if not logged in
+      if (!sessionStorage.getItem("isLoggedIn")) {
+        window.location.href = "login.html";
+      }
+    </script>
     <script src="login.js"></script>
   </body>
 </html>

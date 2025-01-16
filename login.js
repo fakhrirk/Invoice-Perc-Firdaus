@@ -21,26 +21,9 @@ function validateForm(event) {
   return false;
 }
 
-window.onload = function () {
-  if (!sessionStorage.getItem("isLoggedIn")) {
-    // If not logged in, stay on login page
-    if (window.location.pathname !== "/login.html") {
-      window.location.href = "login.html";
-    }
-  } else {
-    // If logged in, redirect to index
-    if (window.location.pathname === "/login.html") {
-      window.location.href = "index.html";
-    }
-  }
-};
-
-function validateForm(event) {
-  event.preventDefault();
-  // Your login validation logic here
-
-  // If login successful
-  sessionStorage.setItem("isLoggedIn", "true");
+if (username === validUsername && password === validPassword) {
+  sessionStorage.setItem("isLoggedIn", "true"); // Tambahkan ini
+  alert("Login berhasil!");
   window.location.href = "index.html";
 }
 
