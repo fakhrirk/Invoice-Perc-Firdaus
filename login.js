@@ -18,6 +18,10 @@ function validateForm(event) {
     errorMessage.textContent = "Username atau password salah!";
   }
 
+  if (!sessionStorage.getItem("isLoggedIn")) {
+    window.location.href = "login.html";
+  }
+
   return false;
 }
 
