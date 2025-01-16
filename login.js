@@ -18,11 +18,11 @@ function validateForm(event) {
     errorMessage.textContent = "Username atau password salah!";
   }
 
-  if (!sessionStorage.getItem("isLoggedIn")) {
-    window.location.href = "login.html";
-  }
-
   return false;
+}
+
+if (!sessionStorage.getItem("isLoggedIn")) {
+  window.location.href = "login.html";
 }
 
 // dengan kodingan ini user tidak dapat mengklik tombol kiri pada mouse
