@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login Invoice</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-card">
+        <h2>Log in (Firdaus)</h2>
+        <form action="login.php" method="POST" id="loginForm" onsubmit="return validateForm(event)">
+          <div class="input-group">
+            <input type="text" name="username" id="username" placeholder="User Name" required />
+            <span class="icon">👤</span>
+          </div>
+          <div class="input-group">
+            <input type="password" name="password" id="password" placeholder="Password" required />
+            <span class="icon">🔑</span>
+          </div>
+          <button type="submit" name="submit" class="btn">Masuk</button>
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=6285656563250" class="forgot-password">Forgot Password?</a>
+          <div id="errorMessage" class="error-message"></div>
+        </form>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

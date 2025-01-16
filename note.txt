@@ -1,0 +1,37 @@
+
+
+(VVVVV buat page login)
+<?php 
+
+session_start();
+
+if (isset($_POST["submit"])) {
+    if ($_POST["username"] == "admin" && $_POST["password"] == "123") {
+        $_SESSION['login'] = true; // Mengatur sesi login
+        header("Location: index.php");
+        exit; 
+    } else {
+        $error = true;
+    }
+}
+
+?>
+
+
+
+(VVVVV Buat page home atau dashboard nya)
+<?php
+session_start();
+
+if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
+
+(Buat alert klau pw / nameuser salah)
+
+      <?php if (isset($error)) : ?>
+      <p style="color: red; margin-top: 20px">Username atau Password salah</p>
+      <?php endif?> 
