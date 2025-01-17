@@ -10,6 +10,7 @@ function validateForm(event) {
   const validPassword = "123321";
 
   if (username === validUsername && password === validPassword) {
+    sessionStorage.setItem("isLoggedIn", "true");
     alert("Login berhasil!");
     // Di sini Anda bisa menambahkan redirect ke halaman dashboard
     window.location.href = "index.html";
@@ -19,12 +20,6 @@ function validateForm(event) {
   }
 
   return false;
-}
-
-if (username === validUsername && password === validPassword) {
-  sessionStorage.setItem("isLoggedIn", "true"); // Tambahkan ini
-  alert("Login berhasil!");
-  window.location.href = "index.html";
 }
 
 // dengan kodingan ini user tidak dapat mengklik tombol kiri pada mouse
