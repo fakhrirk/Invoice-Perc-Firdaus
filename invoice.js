@@ -82,9 +82,10 @@ function fetchItemDetails() {
     // PT Dwi Cahaya Jaya
     DCJ01: { name: "Form Izin Meninggalkan Kantor (RIM)", price: 250000 },
     DCJ02: { name: "Form Surat Perjalanan Dinas (RIM)", price: 250000 },
-    DCJ03: { name: "Form Purchase Request (RIM)", price: 350000 },
+    DCJ03: { name: "Form Purchase Request (RIM)", price: 250000 },
     DCJ04: { name: "Form Permohonan Cuti Karyawan (RIM)", price: 250000 },
     DCJ05: { name: "Form Permohonan Lembur (RIM)", price: 250000 },
+    DCJ06: { name: "Time Sheet 3 Rangkap (RIM)", price: 250000 },
   };
 
   if (itemDetails[itemCode]) {
