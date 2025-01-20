@@ -78,6 +78,13 @@ function fetchItemDetails() {
     RSPK12: { name: "Lembar EKG", price: 700 },
     RSPK13: { name: "Lembar USG", price: 700 },
     RSPK14: { name: "Buku catatan pemberian obat", price: 10500 },
+
+    // PT Dwi Cahaya Jaya
+    DCJ01: { name: "Form Izin Meninggalkan Kantor (RIM)", price: 250000 },
+    DCJ02: { name: "Form Surat Perjalanan Dinas (RIM)", price: 250000 },
+    DCJ03: { name: "Form Purchase Request (RIM)", price: 350000 },
+    DCJ04: { name: "Form Permohonan Cuti Karyawan (RIM)", price: 250000 },
+    DCJ05: { name: "Form Permohonan Lembur (RIM)", price: 250000 },
   };
 
   if (itemDetails[itemCode]) {
