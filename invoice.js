@@ -236,6 +236,115 @@ function printNota() {
 
     <body>
         <img src="asssets/Logo1.png">
+        <p class="jenis" ><strong>NOTA</strong></p>
+        <p class="name" ><strong>Nama Customer : </strong>${customerName}</p>
+        <p><strong>Nomor PO : </strong>${NoPO}</p>
+        <p><strong>Tanggal : </strong>${invoiceDate}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Harga Satuan</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${items
+                  .map(
+                    (item) => `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.quantity}</td>
+                        <td>${item.price}</td>
+                        <td>${item.total}</td>
+                    </tr>
+                    `
+                  )
+                  .join("")}
+            </tbody>
+        </table>
+
+        <p class="total">Total Harga: ${totalAmount}</p>
+    <div class="ttd">
+      <p>Pengirim</p>
+      <p>Penerima</p>
+    </div>
+    </body>
+</html>
+  `;
+
+  const printWindow = window.open("", "_blank");
+  printWindow.document.write(invoiceContent);
+  printWindow.document.close();
+  printWindow.print();
+}
+
+function printTandaTerimaKontrabon() {
+  const customerName = $("#customerName").val();
+  const NoPO = $("#NoPO").val();
+  const invoiceDate = $("#invoiceDate").val();
+  const items = [];
+
+  $("#invoiceItems tr").each(function () {
+    const name = $(this).find("td:eq(0)").text();
+    const quantity = $(this).find("td:eq(1) input").val();
+    const price = $(this).find("td:eq(2)").text();
+    const total = $(this).find("td:eq(3)").text();
+
+    items.push({
+      name: name,
+      quantity: quantity,
+      price: price,
+      total: total,
+    });
+  });
+
+  const totalAmount = $("#totalAmount").val();
+
+  const invoiceContent = `
+  <html>
+    <head>
+        <title>Tanda Terima</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+      .logo {
+        width: 250px;
+      }
+
+      .name{
+        margin-top: 30px;
+      }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th,td{
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            .total{
+                font-weight: bold;
+            }
+
+            .ttd {
+              display: flex;
+              justify-content: space-around;
+              font-weight: bold;
+              margin-top: 5%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="asssets/Logo1.png">
+        <p class="jenis" ><strong>TANDA TERIMA</strong></p>
         <p class="name" ><strong>Nama Customer : </strong>${customerName}</p>
         <p><strong>Nomor PO : </strong>${NoPO}</p>
         <p><strong>Tanggal : </strong>${invoiceDate}</p>
@@ -333,6 +442,7 @@ function printTandaTerima() {
 
     <body>
         <img src="asssets/Logo1.png">
+        <p class="jenis" ><strong>TANDA TERIMA</strong></p>
         <p class="name"><strong>Nama Customer : </strong>${customerName}</p>
         <p><strong>Nomor PO : </strong>${NoPO}</p>
         <p><strong>Tanggal : </strong>${invoiceDate}</p>
