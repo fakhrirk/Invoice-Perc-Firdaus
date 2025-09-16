@@ -216,7 +216,7 @@ function printNota() {
                 margin-top: 20px;
             }
             th,td{
-                border: 1px solid #dddddd;
+                border: 2px solid #000000;
                 text-align: left;
                 padding: 8px;
             }
@@ -324,7 +324,7 @@ function printTandaTerimaKontrabon() {
                 margin-top: 20px;
             }
             th,td{
-                border: 1px solid #dddddd;
+                border: 2px solid #000000;
                 text-align: left;
                 padding: 8px;
             }
@@ -427,7 +427,7 @@ function printTandaTerima() {
                 margin-top: 20px;
             }
             th,td{
-                border: 1px solid #dddddd;
+                border: 2px solid #000000;
                 text-align: left;
                 padding: 8px;
             }
